@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: monospace;
+}
+
+body {
+  background: #000;
+  height: 100vh;
+  place-content: center;
+}
+
+form {
+  width: fit-content;
+  place-self: center;
+  max-width: 400px;
+}
+
+.heading {
+  font-size: 2rem;
+  color: #7c7c7c;
+  margin: 0;
+  text-align: center;
+  padding: 2rem;
+  letter-spacing: 1px;
+}
+
+.password-input {
+  background: #252525;
+  display: flex;
+}
+
+#pass {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 2rem;
+  padding: 2rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.password-type {
+  background: #252525;
+  margin: 2rem 0;
+  padding: 2rem;
+}
+
+#copy{
+    background: #95e6a0;
+    padding: 2rem;
+    border-radius: 2px;
+}
+
+.slider__range {
+  display: flex;
+  justify-content: space-between;
+}
+
+#range {
+  font-size: 3rem;
+}
+
+.length-text,
+#range,
+#pass {
+  color: #d4d4d4;
+}
+
+/* slider */
+#slider {
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+ #slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: black;
+  border: 2px solid #95e6a0;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  top: -4px;
+}
+
+
+ #slider::-webkit-slider-runnable-track {
+  background: black;
+  height: 6px;
+} 
+
+.list {
+  list-style: none;
+  color: #d4d4d4;
+  width: 100%;
+  padding: 0;
+}
+
+.list__item {
+  display: flex;
+  font-size: 2rem;
+  gap: 3rem;
+  padding: 1.2rem;
+}
+
+/* checkboxes */
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #999;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #95e6a0;
+  border-color: #95e6a0;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: -2px;
+  width: 5px;
+  height: 13px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* Generate Button */
+
+#btn {
+  width: 100%;
+  padding: 2rem;
+  font-size: 2rem;
+  background: #95e6a0;
+  border: 1px solid #95e6a0;
+  border-radius: 2px;
+}
+#btn:hover {
+  border: 1px solid #95e6a0;
+  background: none;
+  color: #95e6a0;
+}
+
+/* Strength */
+.strength{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #161616;
+    padding: 2.4rem;
+    margin: 2rem 0;
+}
+
+.str-text{
+    color: #7c7c7c;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.type-text{
+    color: #d4d4d4;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.strength-type{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.level{
+    width: 8px;
+    height: 28px;
+    background: #fde768;
+}

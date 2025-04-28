@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <h3 class="heading">Password Generator</h3>
+    <form>
+      <div class="password-input">
+        <input id="pass" type="text" placeholder="..." readonly />
+        <img src="./images/copy-icon.png" alt="copy" id="copy">
+      </div>
+      <div class="password-type">
+        <div class="slider__range">
+            <h2 class="length-text">Character Length</h2>
+            <div id="range">10</div>
+
+        </div>
+        <input type="range" id="slider" min="1" max="10" value="10">
+        <ul class="list">
+          <li class="list__item">
+            <input class="checkbox" type="checkbox" id="uppercase" checked/>
+            <label for="uppercase">Include Uppercase Letters</label>
+          </li>
+          <li class="list__item">
+            <input class="checkbox" type="checkbox" id="lowercase" checked/>
+            <label for="lowercase">Include Lowercase Letters</label>
+          </li>
+          <li class="list__item">
+            <input class="checkbox" type="checkbox" id="numbers" checked/>
+            <label for="numbers">Include Numbers</label>
+          </li>
+          <li class="list__item">
+            <input class="checkbox" type="checkbox" id="symbols" checked/>
+            <label for="symbols">Include Symbols</label>
+          </li>
+        </ul>
+        <div class="strength">
+          <h3 class="str-text ">STRENGTH</h3>
+          <div class="strength-type">
+              <h2 class="type-text">Strong</h2>
+              <div class="level"></div>
+              <div class="level"></div>
+              <div class="level"></div>
+          </div>
+        </div>
+        <button id="btn">GENERATE -></button>
+      </div>
+    </form>
+
+
+    <script src="./JS/index.js"></script>
+  </body>
+</html>
