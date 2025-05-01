@@ -49,11 +49,25 @@ function generatePassword() {
     const symbol = '!@#$%^&*_*'
 
     let allowChars = '';
+    let mustInclude = [];
 
-    if(lowercase.checked) allowChars += lower; 
-    if(uppercase.checked) allowChars += upper; 
-    if(numbers.checked) allowChars += number; 
-    if(symbols.checked) allowChars += symbol; 
+    if(lowercase.checked) {
+        allowChars += lower; 
+        mustInclude.push(lower[Math.floor(Math.random()* lower.length)]);
+    } 
+    if(uppercase.checked) {
+        allowChars += upper; 
+        mustInclude.push(upper[Math.floor(Math.random()* upper.length)]);
+    }
+    if(numbers.checked) {
+        allowChars += number; 
+        mustInclude.push(number[Math.floor(Math.random()* number.length)]);
+    }
+    if(symbols.checked) {
+        allowChars += symbol; 
+        mustInclude.push(symbol[Math.floor(Math.random()* symbol.length)]);
+    }    
+
 
     if(allowChars === '') {
         alert('select atleast one checkbox');
@@ -63,13 +77,22 @@ function generatePassword() {
     let genPassword = '';
     const length = slider.value;
 
-    for(let i = 0; i< length; i++) {
-        const randomIndex = Math.floor(Math.random()* allowChars.length);
-        genPassword += allowChars[randomIndex];
-    }
+    if(length < 4) {
+        genPassword=[];
+        for (let i = 0; i < length; i++) {
+            genPassword.push(mustInclude[i]);
+            
+        }
+    } else {
+        genPassword = mustInclude;
+        for(let i = mustInclude.length; i< length; i++) {
+            const randomIndex = Math.floor(Math.random()* allowChars.length);
+            genPassword.push(allowChars[randomIndex]);
+        }
 
+    }
     
-    return genPassword;
+    return genPassword.join('');
 }
 
 
