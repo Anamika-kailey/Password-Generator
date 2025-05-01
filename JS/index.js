@@ -74,15 +74,20 @@ function generatePassword() {
         return '';
     }
 
-    let genPassword = '';
+    let genPassword = [];
     const length = slider.value;
 
     if(length < 4) {
-        genPassword=[];
-        for (let i = 0; i < length; i++) {
-            genPassword.push(mustInclude[i]);
-            
+        if(mustInclude.length > length) {
+        mustInclude = mustInclude.slice(0,length);  
         }
+        genPassword = mustInclude;
+        console.log(genPassword)
+        while (genPassword.length < length) {
+            const randomChar = allowChars[Math.floor(Math.random() * allowChars.length)];
+            genPassword.push(randomChar);
+        }
+        console.log(genPassword);
     } else {
         genPassword = mustInclude;
         for(let i = mustInclude.length; i< length; i++) {
